@@ -42,10 +42,14 @@ touch dosya{1..5}.html -> 5 adet .html uzantılı dosya oluşturma
 .gitignore -> !belgeler/dosya1.html -> Belgeler klasörünün içindeki dosya1.html hariç dosyaları sisteme gösterme, kayıt etme
 ---
 git pull -> GitHub'daki dosyaları çekiyor
+---
+
 git branch -> Localdeki dalları listeler
 git branch --all -> Github + Localdaki dalların hepsini listeler
 git branch yandal2 -> Yeni dal oluşturur
 git checkout yandal2 -> Yandal2 ye geçiş yapar
 git diff master yandal2 -> 2 dal arasındaki farklılıkları gösterir
 git merge yandal2 -> Belirttiğin daldaki değişiklikleri, içinde bulunduğun dala entegre eder
+git branch -d yandal2 -> Branch Silme
+---
 git remote rm mygit -> Bağlantıyı silme
