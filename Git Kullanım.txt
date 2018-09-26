@@ -1,23 +1,49 @@
+-> Temel Ayarlar
 git config --global user.name "Yusuf Can Şahin" -> Kullanıcı adı oluşturma
 git config --global user.mail "y.cansahin@gmail.com" -> Kullanıcı mail adresi oluşturma
----
 git config --global --list -> Tüm kayıtlı bilgileri gösterir
 git config --global --unset-all user.name -> Kayıtlı Kullanıcı adlarını siler
 git config --global --unset-all user.email -> Kayıtlı Mail adreslerini siler
 
+
+-> .git
 git init -> Dosyayı .git yapar
----
+
+
+-> Bir kaç kısa kod
+cd -> Geçilmek istenen dizin
+cd .. -> Bir önceki dizine geçer
 pwd -> Bulunduğu dosya konumu
 ls -> Bulunduğu dosya konumundaki dosyalar
 ls -a -> Gizli dosyaları gösterir
-cd -> Geçilmek istenen dizin
-cd .. -> Bir önceki dizine geçer
----
-git add . -> Dizindeki bütün dosyaları Geçiş Bölgesine aktarır -> 1. Yapılacak
-git commmit -m "İlk Versiyon" -> Git Deposuna kayıt eder, açıklama ile birlikte -> 2. Yapılacak
 git log -> Kayıt edilen versiyonları listeler
+touch dosya{1..5}.html -> 5 adet .html uzantılı dosya oluşturma
+
+
+-> Git Github, Gitlab bağlantı işlemleri
+git remote add githubRepo https://github.com/CanSahin35/git-dersleri.git -> Dosyaları git ile Bağlama
+git remote -> Bağlantı kontrol
+git remote rm mygit -> Bağlantıyı silme
+git push -u githubRepo master -> Dosyaları yükle
+git pull -> GitHub'daki dosyaları çekiyor
+
+
+-> Dal ayarları (Yan dal oluşturma, geçiş, silme)
+git branch -> Localdeki dalları listeler
+git branch --all -> Github + Localdaki dalların hepsini listeler
+git branch yandal2 -> Yeni dal oluşturur
+git checkout yandal2 -> Yandal2 ye geçiş yapar
+git diff master yandal2 -> 2 dal arasındaki farklılıkları gösterir
+git merge yandal2 -> Belirttiğin daldaki değişiklikleri, içinde bulunduğun dala entegre eder
+git branch -d yandal2 -> Branch Silme
+
+
+-> Dosya yükleme, güncelleme, silme, kurtarma işlemleri
 git status -> Geçiş bölgesine gönderilmemiş değişiklik varsa onları listeler
+git add . -> Dizindeki bütün dosyaları Geçiş Bölgesine aktarır -> 1. Yapılacak
 git add hakkimizda.php -> Sadece belirtilen dosyayı geçiş bölgesine gönderir
+git commit -m "Açıklama" -> Git Deposuna kayıt eder, açıklama ile birlikte -> 2. Yapılacak
+git commit --amend -m "Açıklama" -> Son yapılan commit değiştirme
 git diff -> Çalışma dosyası ile Geçiş bölgesi arasındaki Dosyaların içinde yapılmış değişiklikleri gösterir
 git diff hakkimizda.php -> Sadece belirtilen dosyanın içindeki değişiklikleri gösterir
 git diff --staged -> Geçiş bölgesi ile Git deposu arasındaki Dosyaların içinde yapılmış değişiklikleri gösterir
@@ -27,29 +53,10 @@ git checkout -- index.php -> Geçiş Bölgesine gitmemiş Dosyayı bir önceki h
 git reset head index.php -> Geçiş Bölgesine gitmiş Dosyayı bir önceki haline geri getirir (Kurtarma)
 git checkout af0f00ed7d6ef31dce5e148e26e239cbffb682aa -- . -> İstenilen versiyona ait tüm dosyaları HashTag'deki haline çevirir
 git checkout af0f00ed7d6ef31dce5e148e26e239cbffb682aa -- index.php -> İstenilen versiyona ait belirtilen dosyayayı çevirir
----
-git remote add githubRepo https://github.com/CanSahin35/git-dersleri.git -> Dosyaları git ile Bağlama
-git remote -> Bağlantı kontrol
-git push -u githubRepo master -> Dosyaları yükle
----
-cat >> .gitignore -> Takip edilmesini istemediğin dosya adını yaz -> (Gizli Klasör)
-cat .gitignore -> gitignore içi kontrol
-git add .
-git commit -m "gitignore eklendi"
----
-touch dosya{1..5}.html -> 5 adet .html uzantılı dosya oluşturma
+
+
+-> Dosya görünürlük ayarları
 .gitignore -> belgeler/* -> Belgeler klasörünün içindeki dosyaları sisteme gösterme, kayıt etme
 .gitignore -> !belgeler/dosya1.html -> Belgeler klasörünün içindeki dosya1.html hariç dosyaları sisteme gösterme, kayıt etme
----
-git pull -> GitHub'daki dosyaları çekiyor
----
-
-git branch -> Localdeki dalları listeler
-git branch --all -> Github + Localdaki dalların hepsini listeler
-git branch yandal2 -> Yeni dal oluşturur
-git checkout yandal2 -> Yandal2 ye geçiş yapar
-git diff master yandal2 -> 2 dal arasındaki farklılıkları gösterir
-git merge yandal2 -> Belirttiğin daldaki değişiklikleri, içinde bulunduğun dala entegre eder
-git branch -d yandal2 -> Branch Silme
----
-git remote rm mygit -> Bağlantıyı silme
+cat >> .gitignore -> Takip edilmesini istemediğin dosya adını yaz -> (Gizli Klasör)
+cat .gitignore -> gitignore içi kontrol
