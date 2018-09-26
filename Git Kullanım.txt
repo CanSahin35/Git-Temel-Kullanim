@@ -1,3 +1,5 @@
+
+
 -> Temel Ayarlar
 git config --global user.name "Yusuf Can Şahin" -> Kullanıcı adı oluşturma
 git config --global user.mail "y.cansahin@gmail.com" -> Kullanıcı mail adresi oluşturma
@@ -60,3 +62,4 @@ git checkout af0f00ed7d6ef31dce5e148e26e239cbffb682aa -- index.php -> İstenilen
 .gitignore -> !belgeler/dosya1.html -> Belgeler klasörünün içindeki dosya1.html hariç dosyaları sisteme gösterme, kayıt etme
 cat >> .gitignore -> Takip edilmesini istemediğin dosya adını yaz -> (Gizli Klasör)
 cat .gitignore -> gitignore içi kontrol
+
